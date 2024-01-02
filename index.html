@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Máy ấp trứng Tự Động</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="aptrung.css" />
+    </head>
+    <body>
+        <div class="tieude">
+            <h1
+                class="menu"
+                style="text-align: center; text-transform: uppercase"
+            >
+                Máy ấp trứng Tự Động
+            </h1>
+            <img
+                class="gif"
+                src="https://elica.vn/wp-content/uploads/2019/11/gif-leaf-loading-gif-MAIN.gif"
+                alt="this slowpoke moves"
+                width="30"
+                height="30"
+            />
+        </div>
+        <hr />
+        <div id="time"></div>
+        <script>
+            function dongho() {
+                var time = new Date();
+                var gio = time.getHours();
+                var phut = time.getMinutes();
+                var giay = time.getSeconds();
+                if (gio < 10) gio = "0" + gio;
+                if (phut < 10) phut = "0" + phut;
+                if (giay < 10) giay = "0" + giay;
+                document.getElementById("time").innerHTML =
+                    gio + ":" + phut + ":" + giay;
+                setTimeout("dongho()", 1000);
+            }
+            dongho();
+        </script>
+
+        <div class="chunhat1">
+            <div id="square2">
+                <img
+                    class="img_center"
+                    src="img/doam.png"
+                    alt="Trulli"
+                    width="120px"
+                />
+				</br>
+                <h2 class="text" style="color: #808080">
+                    <span id="doam">00</span>%
+                </h2>
+            </div>
+
+            <div id="square3">
+                <img
+                    class="img_center"
+                    src="img/viscosity.png"
+                    alt="Trulli"
+                    width="120px"
+                />
+                <h2 class="text" style="color: #808080">
+                    <span id="nhietdo">00</span>*C
+                </h2>
+            </div>
+        </div>
+
+        <div class="chunhat1">
+            <div id="square1">
+                <input class="text" style="height:50px; width:90px; font-size:16pt; color:blue; text-align: center;" id="doamSet" name="fname">
+                <button class="text" type="button" style="margin-top: 1%; height:50px; width:90px; font-size:14pt;" id="btSetDoAm"> SET </button>
+            </div>
+            <div id="square1">
+                <input class="text" style="height:50px; width:90px; font-size:16pt; color:blue; text-align: center;" id="nhietdoSet" name="fname">
+                <button class="text" type="button" style="margin-top: 1%; height:50px; width:90px; font-size:14pt;" id="btSetNhietDo"> SET </button>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="aptrung.js"></script>
+		
+    </body>
+</html>
